@@ -1,28 +1,51 @@
 package model;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
+
+@Entity
+@NamedQuery(name="Manufacturer.findAll", query="SELECT m FROM Manufacturer m")
 public class Manufacturer {
-	private String pib;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String pNumber;
 	private String address;
+	
+	@OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+	@JoinColumn(name="zip_code") // KOLONA IZ TABELE ODG. OBJEKTA KOJA JE ZAPRAVO STRANI KLJUC U OVOJ
 	private Location location;
 	
 	
-	public Manufacturer(String pib, String pNumber, String address, Location location) {
+	public Manufacturer() {
+		
+	}
+	
+	
+	
+	public Manufacturer(int pib, String pNumber, String address, Location location) {
 		super();
-		this.pib = pib;
+		this.id = pib;
 		this.pNumber = pNumber;
 		this.address = address;
 		this.location = location;
 	}
 
 
-	public String getPib() {
-		return pib;
+	public int getPib() {
+		return id;
 	}
 
 
-	public void setPib(String pib) {
-		this.pib = pib;
+	public void setPib(int pib) {
+		this.id = pib;
 	}
 
 
@@ -54,6 +77,14 @@ public class Manufacturer {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Manufacturer [pNumber=" + pNumber + ", address=" + address + ", location=" + location
+				+ "]";
+	}
+	
 	
 	
 	
