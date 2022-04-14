@@ -24,5 +24,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="src" path="/ProjectDay32"/>
+	<classpathentry kind="lib" path="C:/Users/Acer/Desktop/Engineering Software Lab/MATERIJALI/UserLibraries/UserLibraries/EclipseLink/eclipselink-2.7.8.v20201217-ecdf3c32c4/eclipselink/jlib/jpa/jakarta.persistence_2.2.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

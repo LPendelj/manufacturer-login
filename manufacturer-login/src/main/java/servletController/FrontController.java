@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import appController.AppController;
+
 /**
  * Servlet implementation class FrontController
  */
@@ -39,5 +41,12 @@ public class FrontController extends HttpServlet {
 	public void processRequest(HttpServletRequest request, HttpServletResponse response) {
 		
 	}
-
+	
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+		AppController appController = new AppController();
+		super.init();
+		
+	}
 }
