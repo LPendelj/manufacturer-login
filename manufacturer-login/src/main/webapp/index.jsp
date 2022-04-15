@@ -14,21 +14,16 @@ body {
   height: 100vh;
 }
 
-a {
-  color: #92badd;
-  display:inline-block;
-  text-decoration: none;
-  font-weight: 400;
-}
+
 
 h2 {
   text-align: center;
-  font-size: 16px;
+  font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px; 
-  color: #cccccc;
+  
 }
 
 .wrapper {
@@ -51,17 +46,17 @@ h2 {
 <h2>Sign in</h2>
 
 	<div class="wrapper">
-		<form action="home" method="post">
+		<form action="/manufacturer-login/home/login" method="post">
 			
 			
 			username:
 			<div>
-				<input type="text" name="username" value="/">
+				<input type="text" name="username" value="">
 			</div>
 			
 			password:
 			<div>
-				<input type="password" name="password" value="/">
+				<input type="password" name="password" value="">
 			</div>
 			
 			

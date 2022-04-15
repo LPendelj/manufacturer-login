@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
+
+
 	@Entity
 	@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 	public class User {
@@ -13,7 +15,7 @@ import javax.persistence.NamedQuery;
 		
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private int idUser;
+		private int userId;
 		
 		
 		private String username;
@@ -24,9 +26,9 @@ import javax.persistence.NamedQuery;
 		public User() {
 		}
 
-		public User(int id, String username, String password, String firstname, String lastname) {
+		public User( String username, String password, String firstname, String lastname) {
 			super();
-			this.idUser = id;
+			
 			this.username = username;
 			this.password = password;
 			this.firstname = firstname;
@@ -34,8 +36,8 @@ import javax.persistence.NamedQuery;
 		}
 
 		
-		public int getIdUser() {
-			return idUser;
+		public int getUserId() {
+			return userId;
 		}
 		
 		public String getUsername() {
@@ -99,5 +101,9 @@ import javax.persistence.NamedQuery;
 			} else if (!username.equals(other.username))
 				return false;
 			return true;
+		}
+		
+		public User clone() {
+			return new User(username, null, firstname, lastname);
 		}
 }

@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 		private EntityManagerFactory emf;
 		
 		private MyEntityManagerFactory() {
-			emf = Persistence.createEntityManagerFactory("Manufacturer-login");
+			emf = Persistence.createEntityManagerFactory("manufacturer-login");
 		}
 		
 		public static EntityManagerFactory getEntityManagerFactory() {

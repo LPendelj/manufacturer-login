@@ -1,11 +1,15 @@
 package storage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 
 import model.users.User;
 import service.StorageActions;
 import connection.MyEntityManagerFactory;
+
 
 
 public class UserStorage implements StorageActions<User> {
@@ -26,6 +30,29 @@ public class UserStorage implements StorageActions<User> {
 		
 		
 		return u;
+	}
+	
+	public User getByCred(String username, String password) {
+		
+		EntityManager er = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		
+		System.out.println("pokrenut metod getByCred");
+		
+		//
+		List<User> users;
+		users = er.createNamedQuery("User.findAll", User.class)
+				.getResultList();
+		
+		User u = new User(username, password, "", "");
+		
+		for(User t : users) {
+			if(u.equals(t)) {
+				System.out.println("Provera izvrsena");
+				return t;
+			}
+		}  return null;
+		
+		 
 	}
 
 }

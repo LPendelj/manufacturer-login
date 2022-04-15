@@ -4,19 +4,29 @@
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<c:url value="/home/pages/manufacturers/view"  var="manufacturersView"/>
+
+
 <html>
 <body>
-	
+
+<jsp:include page="fragments/header.jsp" />  
+
+	<header>
+		<nav><a href="${manufacturersView}" >View manufacturers</a></nav>
+		<nav>Add manufacturers</nav>
+		<nav>View cities</nav>
+	</header>
 	
 	<main>
-		<h2>Dobro dosli, uspesno ste se prijavili na aplikaciju</h2>
+		<h2>Welcome! You successfully logged in!</h2>
 		<article>
 			<div>
-				Ovo je pocetna stranica koja se prikazuje korisniku nakon prijave na sistem!
+				Home page
 			</div>
 		</article>
 	</main>
 	
-	<footer> Copyright 2022.</footer>
+	
 </body>
 </html>

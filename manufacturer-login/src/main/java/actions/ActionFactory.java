@@ -1,6 +1,7 @@
 package actions;
 
 import actions.navigate.HomeAction;
+import actions.navigate.ManufacturersViewAction;
 import webPath.Paths;
 
 public class ActionFactory {
@@ -11,14 +12,17 @@ public class ActionFactory {
 		
 		System.out.println("ActionFactory se pokrece");
 		
-//		switch (path) {
-	//	case Paths.PATH_LOGIN:
+	switch (path) {
+		case Paths.PATH_LOGIN:
 		action = new HomeAction();
-		//	break;
-			//
-		//default:
-			//break;
-		//}
+			break;
+		case Paths.PATH_MANUFACTURERS_VIEW:
+		action = new ManufacturersViewAction();
+		break;
+			
+		default:
+			break;
+		}
 		
 		
 		return action;
