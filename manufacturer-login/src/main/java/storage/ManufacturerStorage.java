@@ -1,5 +1,7 @@
 package storage;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 
@@ -39,6 +41,16 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 		return m;
 		
 		
+	}
+
+	public List<Manufacturer> getManufacturers() {
+		
+		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		
+		List<Manufacturer> manufacturers = em.createNamedQuery("Manufacturer.findAll", Manufacturer.class).getResultList();
+		
+		// TODO Auto-generated method stub
+		return manufacturers;
 	}
 	
 
