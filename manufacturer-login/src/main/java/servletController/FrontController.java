@@ -13,6 +13,8 @@ import appController.AppController;
  */
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private AppController appController;
+	
 
     /**
      * Default constructor. 
@@ -26,7 +28,7 @@ public class FrontController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request, response);
 	}
 
 	/**
@@ -34,19 +36,28 @@ public class FrontController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		processRequest(request, response);
 	}
 	
 	
-	public void processRequest(HttpServletRequest request, HttpServletResponse response) {
+	public void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String page = appController.processRequest(request, response);
+		
+		
+			System.out.println("pokrenut AppController");
+			request.getRequestDispatcher(page).forward(request, response);
+		
 		
 	}
 	
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
-		AppController appController = new AppController();
 		super.init();
 		
+		
+		appController = new AppController();
+		
+		System.out.println("========================= CREATED APPLICATION CONTROLLER =====================");
 	}
 }

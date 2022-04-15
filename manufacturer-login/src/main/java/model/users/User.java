@@ -1,6 +1,21 @@
 package model.users;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+	@Entity
+	@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
 	public class User {
+		
+		
+		@Id
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private int idUser;
+		
+		
 		private String username;
 		private String password;
 		private String firstname;
@@ -9,14 +24,20 @@ package model.users;
 		public User() {
 		}
 
-		public User(String username, String password, String firstname, String lastname) {
+		public User(int id, String username, String password, String firstname, String lastname) {
 			super();
+			this.idUser = id;
 			this.username = username;
 			this.password = password;
 			this.firstname = firstname;
 			this.lastname = lastname;
 		}
 
+		
+		public int getIdUser() {
+			return idUser;
+		}
+		
 		public String getUsername() {
 			return username;
 		}

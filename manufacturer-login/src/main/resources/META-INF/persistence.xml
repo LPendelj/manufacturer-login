@@ -4,6 +4,7 @@
 		
 		<class>model.Manufacturer</class>
 		<class>model.Location</class>
+		<class>model.users.User</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/manufacturer"/>
 			<property name="javax.persistence.jdbc.user" value="Admin"/>

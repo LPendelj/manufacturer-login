@@ -51,7 +51,7 @@ h2 {
 <h2>Sign in</h2>
 
 	<div class="wrapper">
-		<form action="/manufacturer-login/application/login" method="post">
+		<form action="home" method="post">
 			
 			
 			username:

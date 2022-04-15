@@ -3,6 +3,9 @@ package appController;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import actions.AbstractAction;
+import actions.ActionFactory;
+
 
 
 public class AppController {
@@ -12,13 +15,13 @@ public class AppController {
 		String method = request.getMethod();
 		String path = request.getPathInfo();
 		
+		System.out.println("pozvan AppController");
+		
 		System.out.println("METHOD: " + method);
 		System.out.println("PATH: " + path);
 		
-		//AbstractAction action = ActionFactory.createAction(method, path);
+		AbstractAction action = ActionFactory.createAction(method, path);
 		//ToDo action = null;
-		return "";
-		//vraca se stranica koju treba prikazati korisniku
-	//	return action.executeRequest(request, response);
+		return action.executeRequest(request, response);
 	}
 }
