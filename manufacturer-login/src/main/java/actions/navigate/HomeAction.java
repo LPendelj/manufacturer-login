@@ -13,11 +13,18 @@ public class HomeAction extends AbstractAction {
 
 	@Override
 	public String executeRequest(HttpServletRequest request, HttpServletResponse response) {
-
+		
+		
+		
 		System.out.println("pokrenut HomeAction");
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		
+		HttpSession session = request.getSession();
+		
+		System.out.println(request.getParameter("username"));
+		session.setAttribute("username", request.getParameter("username"));
 		
 		UserStorage us = new UserStorage();
 		
@@ -25,7 +32,7 @@ public class HomeAction extends AbstractAction {
 		
 		if(us.getByCred(username, password)!=null) {
 			
-			HttpSession session = request.getSession(true);
+			 session = request.getSession(true);
 			
 			//postojeci korisnik sistema ima password, napravi novog bez password-a
 			User loginUser  = u.clone();

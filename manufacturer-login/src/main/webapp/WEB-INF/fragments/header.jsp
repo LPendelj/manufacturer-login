@@ -5,7 +5,7 @@
 
     
 
-<c:url value="/application/logout" var="urlLogout"></c:url>
+<c:url value="/home/logout" var="urlLogout"></c:url>
 
 	<p>	Welcome, ${loginUser.username} </p>
 	<div style="float:right"><a href="${urlLogout}">Log out</a></div>

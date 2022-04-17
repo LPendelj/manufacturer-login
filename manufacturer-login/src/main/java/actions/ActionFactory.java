@@ -1,6 +1,8 @@
 package actions;
 
 import actions.navigate.HomeAction;
+import actions.navigate.LogoutAction;
+import actions.navigate.ManufacturerAction;
 import actions.navigate.ManufacturersViewAction;
 import webPath.Paths;
 
@@ -18,6 +20,12 @@ public class ActionFactory {
 			break;
 		case Paths.PATH_MANUFACTURERS_VIEW:
 		action = new ManufacturersViewAction();
+		break;
+		case Paths.PATH_MANUFACTURER:
+		action =  new ManufacturerAction();
+		break;
+		case Paths.PATH_LOGOUT:
+		action = new LogoutAction();
 		break;
 			
 		default:

@@ -4,7 +4,7 @@
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:url value="/home/pages/manufacturers/view"  var="manufacturersView"/>
+<c:url value="/home/pages/manufacturers"  var="manufacturersView"/>
 
 
 <html>
