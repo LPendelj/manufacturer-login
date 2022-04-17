@@ -14,7 +14,7 @@ public class AppController {
 	public String processRequest(HttpServletRequest request, HttpServletResponse response) {
 
 		
-		if(request.getSession().getAttribute("username")!= null) {
+		//if(request.getSession().getAttribute("username")!= null) {
 		
 		//iz request-a odrediti koji URL je korisnik zahtevao
 		//konkretan URL mapirati na klasu koja je odgovorna da obradi taj URL
@@ -29,6 +29,6 @@ public class AppController {
 		AbstractAction action = ActionFactory.createAction(method, path);
 		//ToDo action = null;
 		return action.executeRequest(request, response);
-		} else return Paths.PAGE_LOGOUT;
+		//} else return Paths.PAGE_LOGOUT;
 	}
 }
