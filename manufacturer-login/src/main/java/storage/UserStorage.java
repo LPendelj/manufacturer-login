@@ -5,10 +5,11 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-
+import model.Manufacturer;
 import model.users.User;
 import service.StorageActions;
 import connection.MyEntityManagerFactory;
+import dao.impl.UserDaoImpl;
 
 
 
@@ -32,27 +33,23 @@ public class UserStorage implements StorageActions<User> {
 		return u;
 	}
 	
+	@Override
 	public User getByCred(String username, String password) {
 		
-		EntityManager er = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		UserDaoImpl udi = new UserDaoImpl();
 		
-		System.out.println("pokrenut metod getByCred");
+		User u = udi.getByCred(username, password);
 		
-		//
-		List<User> users;
-		users = er.createNamedQuery("User.findAll", User.class)
-				.getResultList();
-		
-		User u = new User(username, password, "", "");
-		
-		for(User t : users) {
-			if(u.equals(t)) {
-				System.out.println("Provera izvrsena");
-				return t;
-			}
-		}  return null;
-		
+		return u;
 		 
 	}
+
+	@Override
+	public User get(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }

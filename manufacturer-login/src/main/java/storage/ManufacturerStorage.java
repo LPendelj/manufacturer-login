@@ -7,6 +7,7 @@ import javax.persistence.TypedQuery;
 
 import model.Manufacturer;
 import connection.MyEntityManagerFactory;
+import dao.impl.ManufacturerDaoImpl;
 import service.StorageActions;
 
 public class ManufacturerStorage implements StorageActions<Manufacturer> {
@@ -27,20 +28,9 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 
 	@Override
 	public Manufacturer get(String s) {
-		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		ManufacturerDaoImpl mdi = new ManufacturerDaoImpl();
 		
-		em.getTransaction().begin();
-		
-		String q = "SELECT m FROM Manufacturer m WHERE m.pNumber='" + s + "'";
-
-		 
-		
-		Manufacturer man = em.createQuery(q, Manufacturer.class).getSingleResult();
-		
-		System.out.println("ovo je proizvodjac " + man);
-		
-		em.getTransaction().commit();
-	em.close();
+		Manufacturer man = mdi.get(s);
 		
 		return man;
 		
@@ -61,6 +51,12 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 
 	@Override
 	public Manufacturer get(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Manufacturer getByCred(String username, String password) {
 		// TODO Auto-generated method stub
 		return null;
 	}

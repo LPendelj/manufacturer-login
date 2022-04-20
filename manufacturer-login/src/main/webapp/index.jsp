@@ -15,17 +15,6 @@ body {
 }
 
 
-
-h2 {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 10px 8px; 
-  
-}
-
 .wrapper {
   display: flex;
   align-items: center;
@@ -49,12 +38,12 @@ h2 {
 		<form action="/manufacturer-login/home/login" method="post">
 			
 			
-			username:
+			<label>username:</label>
 			<div>
 				<input type="text" name="username" value="">
 			</div>
 			
-			password:
+			<label>password:</label>
 			<div>
 				<input type="password" name="password" value="">
 			</div>

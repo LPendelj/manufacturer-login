@@ -12,13 +12,30 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
 <style type="text/css">
+html {
+  background-color: #56baed;
+}
 
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
 
 
 </style>
 <c:url value="/home/pages/manufacturers/view?pNumber="  var="manufacturerView"/>
 </head>
-<body>
+<body class="wrapper">
 
 <header>
 	<jsp:include page="../fragments/header.jsp" />  

@@ -8,6 +8,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Manufacturer</title>
+<style type="text/css">
+	
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+	
+</style>
+
 </head>
 <body>
 
@@ -17,15 +37,18 @@
 	
 	
 	
-	<main>
+	<main class="wrapper">
 		<h2>Manufacturer Info</h2>
 		<article>
 			<div>
 				<form action="///" method="post">
-					<label>Maticni broj</label> <input type="text" name="pNumber"
+					<label>Personal Number</label> <input type="text" name="pNumber"
 						value="${manufacturer.pNumber}" readonly="readonly" />
-						<label>Grad</label>
+						<label>City</label>
 					<input type="text" name="name" value="${manufacturer.location}"
+						readonly="readonly" />
+						<label>Address</label>
+					<input type="text" name="name" value="${manufacturer.address}"
 						readonly="readonly" />
 					
 					<div>
