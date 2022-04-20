@@ -21,22 +21,20 @@
 
 	
 	<main class="wrapper">
-		<h2>Manufacturer Info</h2>
+		<h2>Manufacturer EDIT</h2>
 		<article>
 			<div>
-				<form action="edit" method="post">
+				<form action="/home/manufacturer/edit" method="post">
 					<label>Maticni broj</label> <input type="text" name="pNumber"
-						value="${manufacturer.pNumber}" readonly="readonly" />
+						value="${manufacturer.pNumber}" />
 						<label>Grad</label>
-					<input type="text" name="name" value="${manufacturer.location}"
-						readonly="readonly" />
-						<label>Adresa</label>
-					<input type="text" name="name" value="${manufacturer.address}"
-						readonly="readonly" />
+					<input type="text" name="location" value="${manufacturer.location}"/>
+					<label >Adresa</label>
+					<input  type="text" name="address" value="${manufacturer.address}" placeholder="" />
 					
 					<div>
 							
-						<input type="submit" name="button" value="Edit">	
+						<input type="submit" name="button" value="Save">	
 					</div>
 					
 				</form>

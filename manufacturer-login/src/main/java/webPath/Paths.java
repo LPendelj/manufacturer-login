@@ -13,6 +13,11 @@ public interface Paths {
 	public static final String PAGE_MANUFACTURER="/WEB-INF/pages/manufacturerView.jsp";
 	public static final String PATH_MANUFACTURER="/pages/manufacturers/view";
 	
+	public static final String PAGE_MANUFACTURER_EDIT="/WEB-INF/pages/manufacturerEdit.jsp";
+	public static final String PATH_MANUFACTURER_EDIT="/pages/manufacturers/edit";
+	
+	
+	public static final String PATH_MANUFACTURER_DELETE="/pages/manufacturers/delete";
 	
 	/*
 	 * public static final String PAGE_INDEX="/index.jsp";

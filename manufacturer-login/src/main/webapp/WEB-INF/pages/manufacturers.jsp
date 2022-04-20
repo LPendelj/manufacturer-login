@@ -9,14 +9,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>View Manufacturers</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
-
-<style type="text/css">
+<style><%@include file="/WEB-INF/style/style.css"%></style>
 
 
 
-</style>
 <c:url value="/home/pages/manufacturers/view?pNumber="  var="manufacturerView"/>
+<c:url value="/home/pages/manufacturers/delete?pNumber="  var="manufacturerDelete"/>
 </head>
 <body>
 
@@ -24,7 +22,14 @@
 	<jsp:include page="../fragments/header.jsp" />  
 </header>
 
-<table class="table">
+<script>
+function myFunction() {
+  alert("Item deleted");
+}
+</script>
+
+<table class="wrapper">
+	
 	
 	
 	<thead>
@@ -42,7 +47,8 @@
 								<th>${manufacturer.pNumber}</th>
 								<th>${manufacturer.address}</th>
 								<th>${manufacturer.location}</th>
-								 <th><a href="${manufacturerView}${manufacturer.pNumber}">View</a></th> 
+								 <th><a href="${manufacturerView}${manufacturer.pNumber}">View</a></th>
+								 <th><a href="${manufacturerDelete}${manufacturer.pNumber}" onclick="myFunction()">Remove</a></th> 
 							</tr>
 						</c:forEach>
 					</tbody>

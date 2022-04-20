@@ -7,10 +7,13 @@ import javax.persistence.TypedQuery;
 
 import model.Manufacturer;
 import connection.MyEntityManagerFactory;
+import dao.impl.ManufacturerDaoImpl;
 import service.StorageActions;
 
 public class ManufacturerStorage implements StorageActions<Manufacturer> {
-
+	private ManufacturerDaoImpl mdi;
+	
+	
 	@Override
 	public void save(Manufacturer t) {
 EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
@@ -27,23 +30,10 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 
 	@Override
 	public Manufacturer get(String s) {
-		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
 		
-		em.getTransaction().begin();
-		
-		String q = "SELECT m FROM Manufacturer m WHERE m.pNumber='" + s + "'";
-
-		 
-		
-		Manufacturer man = em.createQuery(q, Manufacturer.class).getSingleResult();
-		
-		System.out.println("ovo je proizvodjac " + man);
-		
-		em.getTransaction().commit();
-	em.close();
-		
-		return man;
-		
+		mdi = new ManufacturerDaoImpl();
+		Manufacturer m = mdi.getManufacturer(s);
+		return m;
 		
 	}
 	
@@ -51,12 +41,9 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 
 	public List<Manufacturer> getManufacturers() {
 		
-		EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
-		
-		List<Manufacturer> manufacturers = em.createNamedQuery("Manufacturer.findAll", Manufacturer.class).getResultList();
-		
-		// TODO Auto-generated method stub
-		return manufacturers;
+		mdi = new ManufacturerDaoImpl();
+		List<Manufacturer> list = mdi.findAll();
+		return list;
 	}
 
 	@Override
@@ -64,6 +51,17 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void delete(String s) {
+		// TODO Auto-generated method stub
+		mdi = new ManufacturerDaoImpl();
+		mdi.deleteManufacturer(s);
+		
+	}
+	
+	
+	
 
 
 

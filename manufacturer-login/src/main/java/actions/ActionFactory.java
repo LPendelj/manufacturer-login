@@ -3,6 +3,8 @@ package actions;
 import actions.navigate.HomeAction;
 import actions.navigate.LogoutAction;
 import actions.navigate.ManufacturerAction;
+import actions.navigate.ManufacturerDeleteAction;
+import actions.navigate.ManufacturerEditAction;
 import actions.navigate.ManufacturersViewAction;
 import webPath.Paths;
 
@@ -27,6 +29,10 @@ public class ActionFactory {
 		case Paths.PATH_LOGOUT:
 		action = new LogoutAction();
 		break;
+		case Paths.PATH_MANUFACTURER_DELETE:
+		action = new ManufacturerDeleteAction();
+		case Paths.PATH_MANUFACTURER_EDIT:
+		action = new ManufacturerEditAction();
 			
 		default:
 			break;

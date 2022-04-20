@@ -4,21 +4,24 @@
 <%@page isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:url value="/home/pages/manufacturers"  var="manufacturersView"/>
+
+
 
 
 <html>
+<head>
+<style><%@include file="/WEB-INF/style/style.css"%></style>
+
+</head>
+
+
 <body>
 
 <jsp:include page="fragments/header.jsp" />  
 
-	<header>
-		<nav><a href="${manufacturersView}" >View manufacturers</a></nav>
-		<nav>Add manufacturers</nav>
-		<nav>View cities</nav>
-	</header>
 	
-	<main>
+	
+	<main class="wrapper">
 		<h2>Welcome! You successfully logged in!</h2>
 		<article>
 			<div>

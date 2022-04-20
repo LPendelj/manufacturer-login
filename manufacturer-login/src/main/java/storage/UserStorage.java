@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-
+import model.Manufacturer;
 import model.users.User;
 import service.StorageActions;
 import connection.MyEntityManagerFactory;
@@ -53,6 +53,18 @@ public class UserStorage implements StorageActions<User> {
 		}  return null;
 		
 		 
+	}
+
+	@Override
+	public Manufacturer get(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(String s) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
