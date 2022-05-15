@@ -70,6 +70,19 @@ public class ManufacturerDaoImpl implements dao.ManufacturerDao {
 		return "Manufacturer " + s + " has been removed";
 	}
 	
+	public void updateManufacturer(String s, String address) {
+EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntityManager();
+		
+		em.getTransaction().begin();
+		
+		String q = "UPDATE Manufacturer m SET m.address='" + address + "' WHERE m.pNumber = '" + s + "'";
+		
+		em.createQuery(q, Manufacturer.class).executeUpdate();
+		
+		em.getTransaction().commit();
+		em.close();
+	}
+	
 	
 
 }

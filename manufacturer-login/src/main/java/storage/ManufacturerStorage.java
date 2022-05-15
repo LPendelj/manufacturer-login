@@ -60,6 +60,10 @@ EntityManager em = MyEntityManagerFactory.getEntityManagerFactory().createEntity
 		
 	}
 	
+	public void update(String s, String a) {
+		mdi= new ManufacturerDaoImpl();
+		mdi.updateManufacturer(s, a);
+	}
 	
 	
 

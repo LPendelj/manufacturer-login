@@ -8,5 +8,6 @@
 </head>
 <body>
 	You successfully logged out.
+	<a href="/manufacturer-login/home/login">Log in</a>
 </body>
 </html>

@@ -21,9 +21,12 @@ public class HomeAction extends AbstractAction {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
+		//PROVERITI KAKO PRATIMO KO JE ULOGOVAN. 
 		HttpSession session = request.getSession();
 		
 		System.out.println(request.getParameter("username"));
+		
+		//OVDE NESTO
 		session.setAttribute("username", request.getParameter("username"));
 		
 		UserStorage us = new UserStorage();
@@ -32,6 +35,7 @@ public class HomeAction extends AbstractAction {
 		
 		if(us.getByCred(username, password)!=null) {
 			
+			//zasto OVO???
 			 session = request.getSession(true);
 			
 			//postojeci korisnik sistema ima password, napravi novog bez password-a

@@ -16,7 +16,7 @@ import webPath.Paths;
 			HttpSession session = request.getSession();
 			session.removeAttribute("loginUser");
 			session.invalidate();
-			session = request.getSession(false);
+			//session = request.getSession(false);
 			return Paths.PAGE_LOGOUT;
 		}
 

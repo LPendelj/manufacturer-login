@@ -19,6 +19,9 @@ public interface Paths {
 	
 	public static final String PATH_MANUFACTURER_DELETE="/pages/manufacturers/delete";
 	
+	public static final String PATH_MANUFACTURER_SAVE="/pages/manufacturers/save";
+	
+	
 	/*
 	 * public static final String PAGE_INDEX="/index.jsp";
 	 * 

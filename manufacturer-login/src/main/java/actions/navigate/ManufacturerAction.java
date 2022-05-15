@@ -20,6 +20,7 @@ public class ManufacturerAction extends AbstractAction {
 		
 		System.out.println(s);
 		
+		System.out.println("Pokrenuta manufacturer Akcija");
 		
 		
 		Manufacturer manufacturer = ms.get(s);

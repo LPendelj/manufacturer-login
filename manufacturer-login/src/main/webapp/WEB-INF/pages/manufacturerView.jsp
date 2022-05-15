@@ -25,14 +25,15 @@
 		<article>
 			<div>
 				<form action="edit" method="post">
-					<label>Maticni broj</label> <input type="text" name="pNumber"
-						value="${manufacturer.pNumber}" readonly="readonly" />
-						<label>Grad</label>
-					<input type="text" name="name" value="${manufacturer.location}"
-						readonly="readonly" />
-						<label>Adresa</label>
+					<label>Personal Number</label> <input type="text" name="pNumber"
+						value="${manufacturer.pNumber}"/>
+						
+						<label>Address</label>
 					<input type="text" name="name" value="${manufacturer.address}"
-						readonly="readonly" />
+						 />
+						 <label>City</label>
+					<input type="text" name="name" value="${manufacturer.location}"
+					 />
 					
 					<div>
 							

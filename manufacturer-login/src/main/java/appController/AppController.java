@@ -26,7 +26,7 @@ public class AppController {
 		System.out.println("METHOD: " + method);
 		System.out.println("PATH: " + path);
 		
-		AbstractAction action = ActionFactory.createAction(method, path);
+		AbstractAction action = ActionFactory.createAction(method, path, request, response);
 		//ToDo action = null;
 		return action.executeRequest(request, response);
 		//} else return Paths.PAGE_LOGOUT;

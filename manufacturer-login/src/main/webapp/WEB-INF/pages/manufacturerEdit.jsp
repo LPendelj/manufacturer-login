@@ -24,13 +24,17 @@
 		<h2>Manufacturer EDIT</h2>
 		<article>
 			<div>
-				<form action="/home/manufacturer/edit" method="post">
-					<label>Maticni broj</label> <input type="text" name="pNumber"
-						value="${manufacturer.pNumber}" />
-						<label>Grad</label>
-					<input type="text" name="location" value="${manufacturer.location}"/>
-					<label >Adresa</label>
-					<input  type="text" name="address" value="${manufacturer.address}" placeholder="" />
+				<form action="save" method="post">
+					<label>Personal Number</label> <input type="text" name="pNumber"
+						value="${manufacturer.pNumber}"  />
+						<label>Address</label>
+					<input type="text" name="address" value="${manufacturer.address}"
+						 />
+						
+						<label>City</label>
+					<input type="text" name="loaction" value="${manufacturer.location}"
+						/>
+						
 					
 					<div>
 							
@@ -44,7 +48,6 @@
 						<button name="button" onclick="history.back()">Cancel</button>
 						
 					</div>
-				
 			
 			</div>
 

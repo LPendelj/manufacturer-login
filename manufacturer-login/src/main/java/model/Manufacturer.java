@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "manufacturer")
-@NamedQuery(name="Manufacturer.findAll", query="SELECT m FROM Manufacturer m")
+@NamedQuery(name="Manufacturer.findAll", query="SELECT m FROM Manufacturer m") //STA ZNACI OVO??
 public class Manufacturer {
 	
 	@Id
@@ -22,8 +22,10 @@ public class Manufacturer {
 	
 	@Column(name="PNUMBER")
 	private String pNumber;
+	@Column(name="ADDRESS")
 	private String address;
 	
+	//Sta znace ovi CAscade Type??
 	@OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
 	@JoinColumn(name="zip_code") // KOLONA IZ TABELE ODG. OBJEKTA KOJA JE ZAPRAVO STRANI KLJUC U OVOJ
 	private Location location;

@@ -8,7 +8,7 @@
 <c:url value="/home/logout" var="urlLogout"></c:url>
 <c:url value="/home/pages/manufacturers"  var="manufacturersView"/>
 
-
+	<!-- OVDE se prikazuje ime ulogovanog usera. PROVERITI KAKO DA SE NE OTVARA na drugom browser-u -->
 	<p>	Welcome, ${loginUser.username} </p>
 	<div style="float:right"><a href="${urlLogout}">Log out</a></div>
 	
